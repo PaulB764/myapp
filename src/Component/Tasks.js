@@ -4,7 +4,6 @@ import initialData from "../Config/Datas";
 function Tasks(){
     const [datas, setDatas] = useState(initialData)
     const [dragging, setDragging] = useState(false)
-
     const dragTask = useRef()
     const dragNode = useRef()
 
