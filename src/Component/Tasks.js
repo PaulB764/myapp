@@ -49,7 +49,8 @@ function Tasks(){
                 <div key={column.title} onDragEnter={dragging && !column.items.length?(e)=>{handleDragEnter(e,{columnI,taskI:0})}:null} className="tasks_column">
                     <h2>{column.title}</h2>
                     {column.items.map((task,taskI)=>(
-                    <div draggable key ={task}
+                    <div draggable 
+                    key ={task}
                     className ={dragging?getStyles({columnI,taskI}):"task_item"}
                     onDragStart={(e)=>handleDragStart(e,{columnI,taskI})} 
                     onDragEnter={dragging?(e)=>{handleDragEnter(e,{columnI,taskI})}:null}>
