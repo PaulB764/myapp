@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import initialData from "../Config/Datas";
+import Column from "./Column";
 
 function Tasks(){
     const [datas, setDatas] = useState(initialData)
@@ -46,18 +47,7 @@ function Tasks(){
     return(
         <div className="tasks">
             {datas.map((column,columnI)=>(
-                <div key={column.title} onDragEnter={dragging && !column.items.length?(e)=>{handleDragEnter(e,{columnI,taskI:0})}:null} className="tasks_column">
-                    <h2>{column.title}</h2>
-                    {column.items.map((task,taskI)=>(
-                    <div draggable 
-                    key ={task}
-                    className ={dragging?getStyles({columnI,taskI}):"task_item"}
-                    onDragStart={(e)=>handleDragStart(e,{columnI,taskI})} 
-                    onDragEnter={dragging?(e)=>{handleDragEnter(e,{columnI,taskI})}:null}>
-                        {task}
-                    </div>
-                    ))}
-                </div>
+                <Column key={column.title} column={column} columnI={columnI} dragging={dragging} getStyles={getStyles} handleDragStart={handleDragStart} handleDragEnter={handleDragEnter}/>
             ))}
         </div>
     )
