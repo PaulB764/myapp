@@ -47,7 +47,15 @@ function Tasks(){
     return(
         <div className="tasks">
             {datas.map((column,columnI)=>(
-                <Column key={column.title} column={column} columnI={columnI} dragging={dragging} getStyles={getStyles} handleDragStart={handleDragStart} handleDragEnter={handleDragEnter}/>
+                <Column 
+                key={column.title} 
+                column={column} 
+                columnI={columnI} 
+                dragging={dragging} 
+                getStyles={getStyles} 
+                handleDragStart={handleDragStart} 
+                handleDragEnter={handleDragEnter} 
+            />
             ))}
         </div>
     )

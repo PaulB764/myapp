@@ -7,14 +7,14 @@ function Column({column, columnI, dragging, getStyles, handleDragStart, handleDr
                     <h2>{column.title}</h2>
                     {column.items.map((task,taskI)=>(
                         <Task 
-                            key={taskI} 
-                            task={task} 
-                            taskI={taskI}  
-                            dragging={dragging}
-                            columnI={columnI}
-                            getStyles={getStyles} 
-                            handleDragStart={handleDragStart}
-                            handleDragEnter={handleDragEnter}
+                        key={taskI} 
+                        task={task} 
+                        taskI={taskI}  
+                        dragging={dragging}
+                        columnI={columnI}
+                        getStyles={getStyles} 
+                        handleDragStart={handleDragStart}
+                        handleDragEnter={handleDragEnter}   
                         />
                     ))}
         </div>
